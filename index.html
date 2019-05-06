@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+
+.top-container {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+</style>
+</head>
+<body style="height:1500px">
+
+<div class="container-fluid">
+  <h3 style="font-weight: bolder; font-size: 35px"><img src="project\images\ab.png" style="height: 120px; width: 500px;">
+  <span style="margin-left: 50px;">SECURE ONLINE DOCUMENT VERIFICATION</span></h3>
+</div>
+
+<nav class="navbar navbar-inverse" style="z-index: 9999" id="myHeader">
+  <!--<a class="navbar-brand" href="#">Logo</a>-->
+  <ul class="nav navbar-nav navbar-left" style="margin-right: 50px">
+    <li class="nav-item">
+      <a class="nav-link" href="#">DirectVerify Now</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Services</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">About Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Contact Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">FAQ</a>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right" style="margin-right: 50px">
+    <li class="nav-item">
+    <a class="nav-link" onclick="document.getElementById('id01').style.display='block'">Login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" onclick="document.getElementById('').style.display='block'">Sign Up</a>
+  </li>
+  </ul>
+</nav>
+<div id="id01" class="modal" style="z-index: 9999">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="project\images\image2.jpg" style="height: 150px; width: auto;" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" class="form-control" style="width: 500px" required>
+      <br>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" style="width: 500px" required>
+        <br>
+      <button type="submit" style="width: 500px; margin-left: 71px;">Login</button>
+      <br>
+      <label>
+        
+        <input type="checkbox" checked="checked" name="remember" style="margin-left: 71px;"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1; width: 500px">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+<div class="container-fluid"><br>
+  <h1 align="center">Easily Capture and Verify Customer Documents</h1>
+  <br>
+   <div class="row" style="width: 100%">
+
+    <div class="col-sm-6" style=" text-align: center; font-family: Arial; font-size: 20px; padding-top: 100px">
+<img src="project\images\image.png" style="height: 150px;width: auto;"
+    align="margin-left"><br>
+    DocVerify Document Verification easily and securely allows customers to perform a high quality scan using their smartphone–even on crumpled documents. It’s the ideal solution to acquire, extract, and verify data from supporting documents such as utility and bank statements. It adds an additional layer of identity proofing needed to know the true identity of your customers.</div>
+    <div class="col-sm-6" ><video style="width: 700px; height: auto;" controls>
+       <source src="project\images\add1.mp4" type="video/mp4">
+    </video></div>
+  </div>
+<div style="background-color: lavender; height: 400px">
+  <br> 
+  <span style="margin-left: 10px; font-weight: bolder; font-size: 25px;text-decoration: underline;">WHAT WE DO :-</span>
+  <br><br><br><br>
+  <a href="project\html_web_pages\educational.html" target="_blank">
+  <img src="project\images\educational.png" class="img-circle" alt="Cinque Terre" class="imgcontainer" height="230px" hspace="100">
+</a>
+  <a href="project\html_web_pages\personal.html" target="_blank">
+  <img src="project\images\personal.jpg" class="img-circle" alt="Cinque Terre" class="imgcontainer" height="230px" hspace="190">
+</a>
+  <a href="project\html_web_pages\commercial.html" target="_blank">
+  <img src="project\images\commercial.png" class="img-circle" alt="Cinque Terre" class="imgcontainer" height="230px" hspace="50">
+</a>
+  <br>
+  <span style="margin-left: 100px; font-weight: bolder; font-size: 20px">Educational Documents</span>
+  <span style="margin-left: 315px; font-weight: bolder; font-size: 20px">Personal Documents</span>
+  <span style="margin-left: 300px; font-weight: bolder; font-size: 20px">Commercial Documents</span>
+</div>
+<div style="background-color: #D3D3D3; height: 400px">
+  <br>
+  <span style="margin-left: 10px; font-weight: bolder; font-size: 25px;text-decoration: underline">HOW IT WORKS :-</span>
+  <br><br><br><br>
+  <a href="project\html_web_pages\Register.html" target="_blank">
+  <img src="project\images\Registration.png" class="img-circle" alt="Cinque Terre" class="imgcontainer" height="230px" hspace="50">
+</a>
+<a href="project\html_web_pages\document Upload.html" target="_blank">
+  <img src="project\images\document Upload.png" class="img-circle" alt="Cinque Terre" class="imgcontainer" height="230px" hspace="70"></a>
+  <img src="project\images\fee Payment.jpg" class="img-circle" alt="Cinque Terre" class="imgcontainer" height="230px" hspace="70">
+  <img src="project\images\document verification.jpg" class="img-circle" alt="Cinque Terre" class="imgcontainer" height="230px" hspace="70">
+  <br>
+  <span style="margin-left: 100px; font-weight: bolder; font-size: 20px">Registration</span>
+  <span style="margin-left: 220px; font-weight: bolder; font-size: 20px">Document Upload</span>
+  <span style="margin-left: 220px; font-weight: bolder; font-size: 20px">Fee Payment</span>
+  <span style="margin-left: 200px; font-weight: bolder; font-size: 20px">Document Verification</span>
+
+
+
+<a href="project\html_web_pages"></a>
+<a href="project\html_web_pages"></a>
+<a href="project\html_web_pages"></a>
+
+
+</div>
+
+</body>
+</html>
+
+
